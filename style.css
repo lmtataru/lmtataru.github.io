@@ -1,5 +1,9 @@
+html { 
+	font-size: 100%;
+}
 * {
 	box-sizing: border-box;
+	/*font-size: 16px;*/
 }	
 	/*-----------------HEADER-----------------*/
 header {
@@ -14,41 +18,39 @@ header {
 body {
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
-    /*background-color: #e8f9fd;*/
-    margin: 0;
+    margin: 0rem;
 }
 
 .logo {
-	height: 110px;
-	width: 130px;
-	margin-left: 10px;
-    margin-right: 10px;
+	height: 7.5rem;
+	width: 8.125rem;
+	margin-left: 0.625rem;
+    margin-right: 0.625rem;
 }
 
 #search-field {
-   height: 26px;
-   width: 350px;
+   height: 1.625rem;
+   width: 21.875rem;
 }
 
 #cart {
-	margin-right: 10px;
+	margin-right: 0.625rem;
 
 }
 .login-btn {
-	height: 25px;
-    width: 60px;
+	height: 1.5625rem;
+    width: 3.75rem;
 	background-color: #f0b323;
 	color: #000000;
 	border: none;
 	text-align: center;
-	/*margin-left: 10px;*/
-    margin-right: 10px;
+    margin-right: 0.625rem;
 }
 /*---------------NAVIGATION MENU---------------*/
 .nav-menu {
 	list-style-type: none;
-	margin: 1px; 
-	padding: 5px 5px;
+	margin: 0.0625rem; 
+	padding: 0.3125rem 0.3125rem;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -57,8 +59,8 @@ body {
 }
 
 nav li {
-	border-right: 2px solid #f0b323;
-    padding: 5px 10px 5px 5px;
+	border-right: 0.125rem solid #f0b323;
+    padding: 0.3125rem 0.625rem 0.3125rem 0.3125rem;
 }
 
 nav li:last-child {
@@ -68,7 +70,7 @@ nav li:last-child {
 nav li a {
 	color: #000000;
     text-decoration: none;
-    padding: 14px 20px;
+    padding: 0.875rem 1.25rem;
 }
 
 nav li a:hover {
@@ -80,24 +82,24 @@ nav li a:hover {
 #hr-nav {
 	background-color: #f0b323;
 	color: #f0b323;
-	height: 2px;
+	height: 0.125rem;
 	border-width: 0;
-	margin-top: 0px;
+	margin-top: 0rem;
 }
 /*-----------------CONTENT-----------------*/
 h3 {
 	text-align: center;
-	margin: 15px;
-	padding: 15px;
+	margin: 0.9375rem;
+	padding: 0.9375rem;
 }
 
 .show-book i {
 	color: #123C69;
-	font-size: 16px;
-	margin: 0px;
+	font-size: 1rem;
+	margin: 0rem;
 }
 .show-book i:hover {
-	font-size: 20px;
+	font-size: 1.25rem;
 }
 
 .show-book {
@@ -110,18 +112,18 @@ h3 {
 }
 
 .each-book {
-	padding: 0px;
-	margin:0px;
-	border:0px;
+	padding: 0rem;
+	margin:0rem;
+	border:0rem;
 }
 
 .each-book img{
-	width: 120px;
-	height: 120px;
+	width: 7.5rem;
+	height: 7.5rem;
 }
 .each-book p{
-	margin:1px;
-	padding: 1px;
+	margin: 0.0625rem;
+	padding: 0.0625rem;
 }
 
 /*-----------------SUBSCRIBE-----------------*/
@@ -140,21 +142,21 @@ h3 {
 }
 
 #subscribe-name {
-	height: 25px;
-    width: 170px;
-	margin: 5px;
+	height: 1.5625rem;
+    width: 10.625rem;
+	margin: 0.3125rem;
 }
 
 #subscribe-email {
-	height: 25px;
-    width: 170px;
-	margin-right: 5px;
+	height: 1.5625rem;
+    width: 10.625rem;
+	margin-right: 0.3125rem;
 }
 
 hr {
 	background-color: #f0b323;
 	color: #f0b323;
-	height: 2px;
+	height: 0.125rem;
 	border-width: 0;
 }
 /*------------------FOOTER-------------------*/
@@ -189,18 +191,18 @@ footer li a:hover {
 .social {
 	text-align: center;
 	color: white;
-	padding: 5px;
+	padding: 0.3125rem;
 	align-self: center;
-	margin: 5px;
+	margin: 0.3125rem;
 }
 .social i {
 	color: white;
-	padding: 0px 3px;
-	margin: 0px 2px;
+	padding: 0rem 0.1875rem;
+	margin: 0rem 0.125rem;
 }
 .social i:hover {
 	color: #f0b323;
-	padding: 5px;
-	margin: 2px;
+	padding: 0.3125rem;
+	margin: 0.125rem;
 }
 
