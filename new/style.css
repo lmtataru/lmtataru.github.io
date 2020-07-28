@@ -1,0 +1,81 @@
+body {
+	font-family: 'Roboto', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    /*background-color:#fff7ed;*/
+}
+
+.navbar{
+	background-color: #15161D !important;
+}
+
+.img-fluid{
+	width: 7rem;
+}
+
+.cart{
+    color: #ffff;
+}
+
+ion-icon {
+  font-size: 20px;
+}
+
+.nav-link {
+	color: #ffffff !important;
+}
+.nav-link:hover {
+	color: 	#5bc0de !important;
+}
+
+.carousel {
+    margin: auto;
+	padding: 0 4.375rem;
+}
+
+.carousel-control-prev, .carousel-control-next{
+	height: 50px;
+	width: 40px;
+	margin: auto 0;
+	background: rgba(0, 0, 0, 0.3);
+	padding: 0;
+}
+.form-control:focus{
+	border-color: #5bc0de !important;
+	box-shadow: 0 0 0 0.2rem rgba(91,192,222, 0.25);
+}
+.footer{
+   background-color: #15161D !important;
+}
+.info {
+    list-style-type: none;
+}
+
+.infolink {
+    color: #ffffff !important;
+    text-decoration: none;
+}
+.infolink:hover {
+    text-decoration: underline;
+	color: #5bc0de !important;
+}
+.social{
+	color: #5bc0de !important;
+}
+.social:hover {
+	color:  #175d72 !important;
+}
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { ... }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
