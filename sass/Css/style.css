@@ -1,0 +1,185 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Stripes\/Sass\/style\.scss}line{font-family:\000031}}
+* {
+  box-sizing: border-box; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Stripes\/Sass\/style\.scss}line{font-family:\000035}}
+.stripes {
+  min-height: 100vh; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Stripes\/Sass\/style\.scss}line{font-family:\000039}}
+.split {
+  width: 20%;
+  min-height: 100vh;
+  position: absolute;
+  overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Stripes\/Sass\/style\.scss}line{font-family:\0000315}}
+  .split:nth-child(1) {
+    left: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Stripes\/Sass\/style\.scss}line{font-family:\0000317}}
+    .split:nth-child(1) .split_content {
+      background-color: #244F75;
+      -webkit-animation-name: first_stripe;
+      animation-name: first_stripe;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-direction: forward;
+      animation-direction: forward; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Stripes\/Sass\/style\.scss}line{font-family:\0000328}}
+  .split:nth-child(2) {
+    left: 20vw; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Stripes\/Sass\/style\.scss}line{font-family:\0000330}}
+    .split:nth-child(2) .split_content {
+      background-color: #60BFBF;
+      -webkit-animation-name: second_stripe;
+      animation-name: second_stripe;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-direction: forward;
+      animation-direction: forward; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Stripes\/Sass\/style\.scss}line{font-family:\0000341}}
+  .split:nth-child(3) {
+    left: 40vw; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Stripes\/Sass\/style\.scss}line{font-family:\0000343}}
+    .split:nth-child(3) .split_content {
+      background-color: #8C4B7E;
+      -webkit-animation-name: third_stripe;
+      animation-name: third_stripe;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-direction: forward;
+      animation-direction: forward; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Stripes\/Sass\/style\.scss}line{font-family:\0000354}}
+  .split:nth-child(4) {
+    left: 60vw; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Stripes\/Sass\/style\.scss}line{font-family:\0000356}}
+    .split:nth-child(4) .split_content {
+      background-color: #F8BB44;
+      -webkit-animation-name: fourth_stripe;
+      animation-name: fourth_stripe;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-direction: forward;
+      animation-direction: forward; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Stripes\/Sass\/style\.scss}line{font-family:\0000367}}
+  .split:nth-child(5) {
+    left: 80vw; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Stripes\/Sass\/style\.scss}line{font-family:\0000369}}
+    .split:nth-child(5) .split_content {
+      background-color: #F24B4B;
+      -webkit-animation-name: fifth_stripe;
+      animation-name: fifth_stripe;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-direction: forward;
+      animation-direction: forward; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Stripes\/Sass\/style\.scss}line{font-family:\0000380}}
+.split_content {
+  font-family: Lato;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Stripes\/Sass\/style\.scss}line{font-family:\0000391}}
+  .split_content::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0.05;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: skew(30deg) scaleY(1) translate(0, 0);
+    transform: skew(30deg) scaleY(1) translate(0, 0);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Stripes\/Sass\/style\.scss}line{font-family:\00003109}}
+  .split_content:hover::before {
+    opacity: 0.1;
+    -webkit-transform: skew(0deg) scaleY(1) translate(0, 0);
+    transform: skew(0deg) scaleY(1) translate(0, 0); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Stripes\/Sass\/style\.scss}line{font-family:\00003117}}
+.content_title {
+  font-weight: 400;
+  font-size: 40px; }
+
+@keyframes first_stripe {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@-webkit-keyframes first_stripe {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes second_stripe {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@-webkit-keyframes second_stripe {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes third_stripe {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@-webkit-keyframes third_stripe {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes fourth_stripe {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@-webkit-keyframes fourth_stripe {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes fifth_stripe {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@-webkit-keyframes fifth_stripe {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+
+/*# sourceMappingURL=style.css.map */
