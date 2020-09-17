@@ -17,12 +17,13 @@ function subscribeForm() {
 
    var name_error = document.getElementById("name_error");
    var email_error = document.getElementById("email_error");
-   var result = false;
+   var countErrors = 0;
 
     if ((inputName.value == "") || (inputName.value.length < 3)) {
         inputName.classList.remove("is-valid");
         inputName.classList.add("is-invalid");
         name_error.textContent = "Please insert your name";
+        countErrors++;
     } else {
         inputName.classList.remove("is-invalid");
         inputName.classList.add("is-valid");
@@ -32,19 +33,18 @@ function subscribeForm() {
         inputEmail.classList.remove("is-valid");
         inputEmail.classList.add("is-invalid");
         email_error.textContent = "Please insert your email address";
+        countErrors++;
     } else {
         inputEmail.classList.remove("is-invalid");
         inputEmail.classList.add("is-valid");
         email_error.textContent = "";
     }
 
-    if ((name_error.textContent == "") && (email_error.textContent == "")) {
-        return true;
-    } else {
+    if (countErrors > 0){
         return false;
+    } else {
+        return true;
     }
-
-    return result;
 }
 
 function validateEmail() {
@@ -64,6 +64,7 @@ function messageValidate() {
     }
 }
 
+// remove classes is invalid and valid when the user starts to complete/insert another data in the form
 document.getElementById("inputName").addEventListener("input", nameFunction);
 function nameFunction() {
     document.getElementById("inputName").classList.remove("is-invalid", "is-valid");
