@@ -122,7 +122,7 @@ function registerForm() {
 }
 // validation functions
 function validateEmail(email) {
-    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var mailformat = /^([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9])+$/;
         if (mailformat.test(inputEmail.value)) {
             return true;
         } else {
