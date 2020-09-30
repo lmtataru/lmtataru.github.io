@@ -1,10 +1,8 @@
 "use strict";
-// class Thruster {
-//     public max_power: number;
-//     constructor(max_power: number) {
-//         this.max_power = max_power;
-//     }
-// list_thruster: Thruster[] = [];
-// addThruster(thruster: Thruster): void {
-//         this.list_thruster.push(thruster);
-//     }
+var Thruster = /** @class */ (function () {
+    function Thruster(current_power, max_power) {
+        this.current_power = current_power;
+        this.max_power = max_power;
+    }
+    return Thruster;
+}());

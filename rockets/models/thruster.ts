@@ -1,10 +1,10 @@
-// class Thruster {
-//     public max_power: number;
+class Thruster {
+	public current_power: number;
+    public max_power: number;
 
-//     constructor(max_power: number) {
-//         this.max_power = max_power;
-//     }
-// list_thruster: Thruster[] = [];
-// addThruster(thruster: Thruster): void {
-//         this.list_thruster.push(thruster);
-//     }
+    constructor(current_power: number, max_power: number) {
+    	this.current_power = current_power;
+        this.max_power = max_power;
+    }
+    
+}

@@ -1,9 +1,9 @@
 "use strict";
 var id_button;
-var rockets;
+var rocket;
 var rocket_list = [];
-function createRocket(code, thrusters) {
-    rockets = new Rocket(code, thrusters);
+function createRocket(code, nr_of_thrusters, thrusters) {
+    rocket = new Rocket(code, nr_of_thrusters, thrusters);
 }
 // get data from form
 var rocket_form = document.querySelector('#rocket_form');
@@ -11,23 +11,29 @@ rocket_form.onsubmit = function () {
     var code = document.getElementById("rocket_code");
     var thrusters = document.getElementById("nr_thrusters");
     var code_error = document.getElementById("code_error");
-    var thrusters_error = document.getElementById("thrusters_error");
-    var show_data = document.getElementById("show_data");
     var countErrors = 0;
     countErrors += checkCode(code, code_error);
-    countErrors += checkThruster(thrusters, thrusters_error);
+    countErrors += checkNumberInput(thrusters);
+    if (parseInt(thrusters.value) > 0) {
+        for (var i = 0; i < parseInt(thrusters.value); i++) {
+            var thruster_value = document.getElementById("thruster" + i);
+            countErrors += checkNumberInput(thruster_value);
+        }
+    }
     if (countErrors == 0) {
-        createRocket(code.value, parseInt(thrusters.value));
-        rocket_list[id_button] = rockets;
-        console.log(id_button, rockets, rocket_list);
+        var thruster_list = [];
+        for (var i = 0; i < parseInt(thrusters.value); i++) {
+            var thruster_value = document.getElementById("thruster" + i);
+            thruster_list.push(new Thruster(0, parseInt(thruster_value.value)));
+        }
+        createRocket(code.value, parseInt(thrusters.value), thruster_list);
+        rocket_list[id_button] = rocket;
         code.value = "";
         code.classList.remove("is-invalid", "is-valid");
         thrusters.value = "";
         thrusters.classList.remove("is-invalid", "is-valid");
-        for (var i = 0; i < rocket_list.length; i++) {
-            if (rocket_list[i])
-                show_data.innerHTML += "Rocket " + rocket_list[i].code + " has " + rocket_list[i].thrusters + " thrusters." + "<br>";
-        }
+        modal_rocket.style.display = "none";
+        document.getElementById("input_thruster").innerHTML = "";
     }
     return false; // prevent reload
 };
@@ -50,17 +56,31 @@ function checkCode(code, code_error) {
     }
     return countErrors;
 }
-function checkThruster(thrusters, thrusters_error) {
+function checkNumberInput(number_input) {
     var countErrors = 0;
-    if (!thrusters.value) {
-        thrusters.classList.add("is-invalid");
-        thrusters_error.textContent = "Please insert the number of thrusters";
-        countErrors++;
+    if (number_input.id == "nr_thrusters") {
+        if (!number_input.value) {
+            number_input.classList.add("is-invalid");
+            document.getElementById("thrusters_error").textContent = "Please insert the number of thrusters";
+            countErrors++;
+        }
+        else {
+            number_input.classList.remove("is-invalid");
+            number_input.classList.add("is-valid");
+            document.getElementById("thrusters_error").textContent = "";
+        }
     }
     else {
-        thrusters.classList.remove("is-invalid");
-        thrusters.classList.add("is-valid");
-        thrusters_error.textContent = "";
+        if (!number_input.value) {
+            number_input.classList.add("is-invalid");
+            document.getElementById("thruster_error" + getNrFromID(number_input.id)).textContent = "Please insert the value of power";
+            countErrors++;
+        }
+        else {
+            number_input.classList.remove("is-invalid");
+            number_input.classList.add("is-valid");
+            document.getElementById("thruster_error" + getNrFromID(number_input.id)).textContent = "";
+        }
     }
     return countErrors;
 }
@@ -74,9 +94,8 @@ function validateCode(codenr) {
     }
 }
 function codeExists(codeex) {
-    var i;
     var verifyCode = false;
-    for (i = 0; i < rocket_list.length; i++) {
+    for (var i = 0; i < rocket_list.length; i++) {
         if (codeex == rocket_list[i].code) {
             verifyCode = true;
         }
@@ -86,15 +105,21 @@ function codeExists(codeex) {
 function createInput() {
     var input_thruster = document.getElementById("input_thruster");
     var thrusters = document.getElementById("nr_thrusters");
-    var nr_thru = parseInt(thrusters.value);
+    var nr_thruster = parseInt(thrusters.value);
     input_thruster.innerHTML = '';
-    for (var i = 0; i < nr_thru; i++) {
-        var x = document.createElement("INPUT");
-        x.setAttribute("id", "thruster" + i);
-        x.setAttribute("placeholder", "Insert value of thruster " + (i + 1));
-        x.setAttribute("type", "number");
-        x.setAttribute("class", "form-control form-control-lg");
-        input_thruster.appendChild(x);
+    for (var i = 0; i < nr_thruster; i++) {
+        var create_input = document.createElement("INPUT");
+        var create_div = document.createElement("DIV");
+        create_input.setAttribute("id", "thruster" + i);
+        create_input.setAttribute("placeholder", "Insert value of thruster " + (i + 1));
+        create_input.setAttribute("type", "number");
+        create_input.setAttribute("class", "form-control form-control-lg mb-2");
+        create_input.setAttribute("min", "10");
+        create_input.setAttribute("step", "10");
+        create_div.setAttribute("id", "thruster_error" + i);
+        create_div.setAttribute("class", "invalid-feedback");
+        input_thruster.appendChild(create_input);
+        input_thruster.appendChild(create_div);
     }
 }
 // modal
@@ -105,10 +130,57 @@ window.onclick = function (event) {
     }
 };
 function checkButton(id) {
-    id_button = parseInt(id.match(/\d+/g)[0]);
+    id_button = getNrFromID(id);
     modal_rocket.style.display = "block";
-    console.log(id_button);
 }
 function closeModal() {
     modal_rocket.style.display = "none";
+}
+function getNrFromID(id) {
+    return parseInt(id.match(/\d+/g)[0]);
+}
+function printRocketInfo(id) {
+    var id_info_button = getNrFromID(id);
+    var show_data = document.getElementById("show_data");
+    if (rocket_list[id_info_button]) {
+        show_data.innerHTML = "Rocket " + rocket_list[id_info_button].code + " boosters max power: ";
+        for (var i = 0; i < rocket_list[id_info_button].nr_of_thrusters; i++) {
+            show_data.innerHTML += rocket_list[id_info_button].thrusters[i].max_power + ", ";
+        }
+        show_data.innerHTML = show_data.innerHTML.slice(0, -2);
+    }
+    else {
+        show_data.innerHTML = "You need to create the rocket first!";
+    }
+}
+function printAllRocketsInfo() {
+    var show_data = document.getElementById("show_data");
+    show_data.innerHTML = "";
+    if (rocket_list.length > 0) {
+        for (var i = 0; i < rocket_list.length; i++) {
+            if (rocket_list[i]) {
+                show_data.innerHTML += "Rocket " + rocket_list[i].code + " boosters max power: ";
+                for (var j = 0; j < rocket_list[i].nr_of_thrusters; j++) {
+                    show_data.innerHTML += rocket_list[i].thrusters[j].max_power + ", ";
+                }
+                show_data.innerHTML = show_data.innerHTML.slice(0, -2);
+                show_data.innerHTML += "<br>";
+            }
+        }
+    }
+    else {
+        show_data.innerHTML = "You need to create the rockets first!";
+    }
+}
+function accelerateRocket(id) {
+    var id_accelerate = getNrFromID(id);
+    if (rocket_list[id_accelerate]) {
+        rocket_list[id_accelerate].accelerate_rocket();
+    }
+}
+function breakRocket(id) {
+    var id_break = getNrFromID(id);
+    if (rocket_list[id_break]) {
+        rocket_list[id_break].break_rocket();
+    }
 }
