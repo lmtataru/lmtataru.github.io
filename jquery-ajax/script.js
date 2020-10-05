@@ -2,9 +2,9 @@ $(document).ready(function () {
 	$("#jokes").click(function (e){
 		e.preventDefault();
 		$.ajax({
-			url:`http://api.icndb.com/jokes/random`,
-			type:`get`,
-			dataType:`json`,
+			url:'https://api.icndb.com/jokes/random',
+			type:'get',
+			dataType:'json',
 			success: function(data){
 				$("#jokeData").html(data.value.joke);
 			},
