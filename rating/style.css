@@ -1,0 +1,25 @@
+* {
+	box-sizing: border-box;
+}
+
+body{
+	min-height: 100vh;
+}
+
+.hearts{
+	min-height: 100vh;
+	display: flex;
+    justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.material-icons {
+	align-self: center;
+	font-size: 7rem;
+	color: #ff99cc;
+}
+
+.material_hover{
+	color:red;
+}
