@@ -1,13 +1,15 @@
 let id_button: number;
 let rocket: Rocket;
 let rocket_list: Rocket[] = [];
-function createRocket(code: string, nr_of_thrusters: number, thrusters: Thruster[]) {
+function createNewRocket(code: string, nr_of_thrusters: number, thrusters: Thruster[]) {
 	rocket = new Rocket(code, nr_of_thrusters, thrusters);
 }
 
 // get data from form
 const rocket_form: HTMLFormElement  = (document.querySelector('#rocket_form') as HTMLFormElement);
 rocket_form.onsubmit = () => {
+	let show_data: HTMLElement = (document.getElementById("show_data") as HTMLElement);
+    let show_data_temp: string = "";
 	let code: HTMLInputElement = (document.getElementById("rocket_code") as HTMLInputElement);
 	let thrusters: HTMLInputElement = (document.getElementById("nr_thrusters") as HTMLInputElement);
 	let code_error: HTMLElement = (document.getElementById("code_error") as HTMLElement);
@@ -29,7 +31,7 @@ rocket_form.onsubmit = () => {
 			let thruster_value: HTMLInputElement = document.getElementById("thruster" + i) as HTMLInputElement;
 			thruster_list.push(new Thruster(0, parseInt(thruster_value.value)));
 		}
-		createRocket(code.value, parseInt(thrusters.value), thruster_list);
+		createNewRocket(code.value, parseInt(thrusters.value), thruster_list);
 		rocket_list[id_button] = rocket;
 		code.value = "";
 		code.classList.remove("is-invalid", "is-valid");
@@ -37,6 +39,8 @@ rocket_form.onsubmit = () => {
 		thrusters.classList.remove("is-invalid", "is-valid");
 		modal_rocket.style.display = "none";
 		(document.getElementById("input_thruster") as HTMLInputElement).innerHTML = "";
+		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">Rocket " + code.value + " has been created successfully!";
+        show_data.innerHTML += show_data_temp;
 	}
 
 	return false; // prevent reload
@@ -47,7 +51,7 @@ function checkCode(code: HTMLInputElement, code_error: HTMLElement) {
 
 	if (!validateCode(code.value)) {
 		code.classList.add("is-invalid");
-		code_error.textContent = "Please insert the code";
+		code_error.textContent = "The code must have 4 letters and 4 digits!";
 		countErrors ++;
 	} else if (codeExists(code.value)) {
 		code.classList.add("is-invalid");
@@ -90,7 +94,7 @@ function checkNumberInput(number_input: HTMLInputElement) {
 }
 
 function validateCode(codenr: string) {
-	let code_format: RegExp = /^[a-zA-Z0-9]{8}$/;
+	let code_format: RegExp = /^[0-9]{4}[a-zA-Z]{4}$/;
 	if (code_format.test(codenr)) {
 		return true;
 	} else {
@@ -138,8 +142,12 @@ window.onclick = function(event: any) {
   	}
 }
 
-function checkButton(id: string) {
+function createRocket(id: string) {
 	id_button = getNrFromID(id);
+	let show_data: HTMLElement = (document.getElementById("show_data") as HTMLElement);
+    let show_data_temp: string = "";
+    show_data_temp += "<div class=\"d-flex justify-content-end mb-4\"><div class=\"msg_cotainer_send\">Create Rocket "+ (id_button+1) +"!</div></div>";
+    show_data.innerHTML += show_data_temp;
 	modal_rocket.style.display = "block";
 }
 
@@ -154,46 +162,89 @@ function getNrFromID(id: string) {
 function printRocketInfo(id: string) {
 	let id_info_button: number = getNrFromID(id);
 	let show_data: HTMLElement = (document.getElementById("show_data") as HTMLElement);
+	let show_data_temp: string = "<div class=\"d-flex justify-content-end mb-4\"><div class=\"msg_cotainer_send\">Print Rocket "+ (id_info_button+1) +"</div></div>";
+	show_data.innerHTML += show_data_temp;
+	show_data_temp = "";
+
 	if (rocket_list[id_info_button]) {
-		show_data.innerHTML = "Rocket " + rocket_list[id_info_button].code + " boosters max power: ";
+		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">Rocket " + rocket_list[id_info_button].code + " has boosters max power: ";
 		for (let i: number = 0; i < rocket_list[id_info_button].nr_of_thrusters; i++) {
-			show_data.innerHTML += rocket_list[id_info_button].thrusters[i].max_power + ", ";
+			show_data_temp += rocket_list[id_info_button].thrusters[i].max_power + ", ";
 		}
-		show_data.innerHTML = show_data.innerHTML.slice(0, -2);
+		show_data_temp = show_data_temp.slice(0, -2);
+		show_data_temp += "</div></div>";
 	} else {
-		show_data.innerHTML = "You need to create the rocket first!";
+		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">You need to create the rocket first!</div></div>";
 	}
+	show_data.innerHTML += show_data_temp;
 }
 
 function printAllRocketsInfo() {
 	let show_data: HTMLElement = (document.getElementById("show_data") as HTMLElement);
-	show_data.innerHTML = "";
+	let show_data_temp: string = "<div class=\"d-flex justify-content-end mb-4\"><div class=\"msg_cotainer_send\">Print all rockets info</div></div>";
+	show_data.innerHTML += show_data_temp;
+	show_data_temp = "";
+
 	if (rocket_list.length > 0) {
 		for (let i: number = 0; i < rocket_list.length; i++) {
 			if (rocket_list[i]) {
-				show_data.innerHTML += "Rocket " + rocket_list[i].code + " boosters max power: ";
+				show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">Rocket " + rocket_list[i].code + " has boosters max power: ";
 				for (let j: number = 0; j < rocket_list[i].nr_of_thrusters; j++) {
-					show_data.innerHTML += rocket_list[i].thrusters[j].max_power + ", ";
+					show_data_temp += rocket_list[i].thrusters[j].max_power + ", ";
 				}
-				show_data.innerHTML = show_data.innerHTML.slice(0, -2);
-				show_data.innerHTML += "<br>";
+				show_data_temp = show_data_temp.slice(0, -2);
+				show_data_temp += "</div></div>";
 			}
 		}
 	} else {
-		show_data.innerHTML = "You need to create the rockets first!";
+		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">You need to create the rockets first!</div></div>";
 	}
+	show_data.innerHTML += show_data_temp;
 }
 
 function accelerateRocket(id: string){
 	let id_accelerate: number = getNrFromID(id);
+	let show_data: HTMLElement = (document.getElementById("show_data") as HTMLElement);
+	let show_data_temp: string = "<div class=\"d-flex justify-content-end mb-4\"><div class=\"msg_cotainer_send\">Accelerate Rocket "+ (id_accelerate+1) +"</div></div>";
+	show_data.innerHTML += show_data_temp;
+	show_data_temp = "";
+
 	if (rocket_list[id_accelerate]){
 		rocket_list[id_accelerate].accelerate_rocket();
+		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">Rocket " + (id_accelerate+1) + " has been accelerated!</div></div>";
+		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">Rocket " + (id_accelerate+1) + " has the thursters with this power now: ";
+		for (let i: number = 0; i < rocket_list[id_accelerate].nr_of_thrusters; i++) {
+			show_data_temp += rocket_list[id_accelerate].thrusters[i].current_power + ", ";
+		}
+		show_data_temp = show_data_temp.slice(0, -2);
+		show_data_temp += "</div></div>";
 	}
+	else{
+		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">You need to create the rocket first!</div></div>";
+	}
+	show_data.innerHTML += show_data_temp;
 }
 
 function breakRocket(id: string){
 	let id_break: number = getNrFromID(id);
+	let id_info_button: number = getNrFromID(id);
+	let show_data: HTMLElement = (document.getElementById("show_data") as HTMLElement);
+	let show_data_temp: string = "<div class=\"d-flex justify-content-end mb-4\"><div class=\"msg_cotainer_send\">Break Rocket "+ (id_break+1) +"</div></div>";
+	show_data.innerHTML += show_data_temp;
+	show_data_temp = "";
+
 	if (rocket_list[id_break]) {
 		rocket_list[id_break].break_rocket();
+		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">Rocket " + (id_break+1) + " has slown down!</div></div>";
+		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">Rocket " + (id_break+1) + " has the thursters with this power now: ";
+		for (let i: number = 0; i < rocket_list[id_break].nr_of_thrusters; i++) {
+			show_data_temp += rocket_list[id_break].thrusters[i].current_power + ", ";
+		}
+		show_data_temp = show_data_temp.slice(0, -2);
+		show_data_temp += "</div></div>";
 	}
+	else{
+		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">You need to create the rocket first!</div></div>";
+	}
+	show_data.innerHTML += show_data_temp;
 }
