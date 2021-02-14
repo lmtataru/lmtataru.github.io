@@ -41,6 +41,7 @@ rocket_form.onsubmit = () => {
 		(document.getElementById("input_thruster") as HTMLInputElement).innerHTML = "";
 		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">Rocket " + code.value + " has been created successfully!";
         show_data.innerHTML += show_data_temp;
+		show_data.scrollTo(0,show_data.scrollHeight);
 	}
 
 	return false; // prevent reload
@@ -148,10 +149,16 @@ function createRocket(id: string) {
     let show_data_temp: string = "";
     show_data_temp += "<div class=\"d-flex justify-content-end mb-4\"><div class=\"msg_cotainer_send\">Create Rocket "+ (id_button+1) +"!</div></div>";
     show_data.innerHTML += show_data_temp;
+	show_data.scrollTo(0,show_data.scrollHeight);
 	modal_rocket.style.display = "block";
 }
 
 function closeModal() {
+	let show_data: HTMLElement = (document.getElementById("show_data") as HTMLElement);
+	let show_data_temp: string = "";
+	show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">Creation of Rocket "+ (id_button+1) +" aborted!</div></div>";
+	show_data.innerHTML += show_data_temp;
+	show_data.scrollTo(0,show_data.scrollHeight);
 	modal_rocket.style.display = "none";
 }
 
@@ -164,6 +171,7 @@ function printRocketInfo(id: string) {
 	let show_data: HTMLElement = (document.getElementById("show_data") as HTMLElement);
 	let show_data_temp: string = "<div class=\"d-flex justify-content-end mb-4\"><div class=\"msg_cotainer_send\">Print Rocket "+ (id_info_button+1) +"</div></div>";
 	show_data.innerHTML += show_data_temp;
+	show_data.scrollTo(0,show_data.scrollHeight);
 	show_data_temp = "";
 
 	if (rocket_list[id_info_button]) {
@@ -177,12 +185,14 @@ function printRocketInfo(id: string) {
 		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">You need to create the rocket first!</div></div>";
 	}
 	show_data.innerHTML += show_data_temp;
+	show_data.scrollTo(0,show_data.scrollHeight);
 }
 
 function printAllRocketsInfo() {
 	let show_data: HTMLElement = (document.getElementById("show_data") as HTMLElement);
 	let show_data_temp: string = "<div class=\"d-flex justify-content-end mb-4\"><div class=\"msg_cotainer_send\">Print all rockets info</div></div>";
 	show_data.innerHTML += show_data_temp;
+	show_data.scrollTo(0,show_data.scrollHeight);
 	show_data_temp = "";
 
 	if (rocket_list.length > 0) {
@@ -200,6 +210,7 @@ function printAllRocketsInfo() {
 		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">You need to create the rockets first!</div></div>";
 	}
 	show_data.innerHTML += show_data_temp;
+	show_data.scrollTo(0,show_data.scrollHeight);
 }
 
 function accelerateRocket(id: string){
@@ -207,6 +218,7 @@ function accelerateRocket(id: string){
 	let show_data: HTMLElement = (document.getElementById("show_data") as HTMLElement);
 	let show_data_temp: string = "<div class=\"d-flex justify-content-end mb-4\"><div class=\"msg_cotainer_send\">Accelerate Rocket "+ (id_accelerate+1) +"</div></div>";
 	show_data.innerHTML += show_data_temp;
+	show_data.scrollTo(0,show_data.scrollHeight);
 	show_data_temp = "";
 
 	if (rocket_list[id_accelerate]){
@@ -223,6 +235,7 @@ function accelerateRocket(id: string){
 		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">You need to create the rocket first!</div></div>";
 	}
 	show_data.innerHTML += show_data_temp;
+	show_data.scrollTo(0,show_data.scrollHeight);
 }
 
 function breakRocket(id: string){
@@ -231,6 +244,7 @@ function breakRocket(id: string){
 	let show_data: HTMLElement = (document.getElementById("show_data") as HTMLElement);
 	let show_data_temp: string = "<div class=\"d-flex justify-content-end mb-4\"><div class=\"msg_cotainer_send\">Break Rocket "+ (id_break+1) +"</div></div>";
 	show_data.innerHTML += show_data_temp;
+	show_data.scrollTo(0,show_data.scrollHeight);
 	show_data_temp = "";
 
 	if (rocket_list[id_break]) {
@@ -247,4 +261,5 @@ function breakRocket(id: string){
 		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">You need to create the rocket first!</div></div>";
 	}
 	show_data.innerHTML += show_data_temp;
+	show_data.scrollTo(0,show_data.scrollHeight);
 }
