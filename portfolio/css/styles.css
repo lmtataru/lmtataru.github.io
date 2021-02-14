@@ -9949,37 +9949,7 @@ h3 {
     display: none;
   }
 
-  .badge {
-    border: 1px solid #000;
-  }
 
-  .table {
-    border-collapse: collapse !important;
-  }
-  .table td,
-.table th {
-    background-color: #fff !important;
-  }
-
-  .table-bordered th,
-.table-bordered td {
-    border: 1px solid #dee2e6 !important;
-  }
-
-  .table-dark {
-    color: inherit;
-  }
-  .table-dark th,
-.table-dark td,
-.table-dark thead th,
-.table-dark tbody + tbody {
-    border-color: #dee2e6;
-  }
-
-  .table .thead-dark th {
-    color: inherit;
-    border-color: #dee2e6;
-  }
 }
 body {
   padding-top: 3.375rem;
@@ -10130,3 +10100,4 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
 }
+
