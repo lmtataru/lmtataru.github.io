@@ -10101,3 +10101,16 @@ section.resume-section .resume-section-content {
   }
 }
 
+@media (min-width: 1440px) {
+  section.resume-section {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
+
+@media (min-width: 2500px) {
+  section.resume-section {
+    padding-left: 16rem;
+    padding-right: 16rem;
+  }
+}
