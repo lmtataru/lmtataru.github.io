@@ -10087,6 +10087,52 @@ section.resume-section {
 section.resume-section .resume-section-content {
   width: 100%;
 }
+@media (max-width: 768px) {
+  h1, .h1 {
+    font-size: 5rem;
+  }
+
+  h2, .h2 {
+    font-size: 2.5rem;
+  }
+
+  h3, .h3 {
+    font-size: 2rem;
+  }
+
+  h4, .h4 {
+    font-size: 1.5rem;
+  }
+
+  h5, .h5 {
+    font-size: 1.25rem;
+  }
+
+  h6, .h6 {
+    font-size: 1rem;
+  }
+  .lgtext {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  p.lead {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .lead {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .subheading {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  .intro {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+}
+
 @media (min-width: 768px) {
   section.resume-section {
     min-height: 100vh;
