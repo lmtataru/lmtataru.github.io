@@ -10101,16 +10101,142 @@ section.resume-section .resume-section-content {
   }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1450px) {
   section.resume-section {
     padding-left: 8rem;
     padding-right: 8rem;
+  }
+  h1, .h1 {
+    font-size: 7rem;
+  }
+
+  h2, .h2 {
+    font-size: 4.5rem;
+  }
+
+  h3, .h3 {
+    font-size: 3.5rem;
+  }
+
+  h4, .h4 {
+    font-size: 2rem;
+  }
+
+  h5, .h5 {
+    font-size: 1.5rem;
+  }
+
+  h6, .h6 {
+    font-size: 1.25rem;
+  }
+  .lgtext {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+  p.lead {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+  .lead {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+  .subheading {
+    font-weight: 600;
+    font-size: 2rem;
+  }
+  .intro {
+    font-weight: 600;
+    font-size: 2.3rem;
+  }
+  #sideNav {
+    width: 20rem;
+  }
+  #sideNav .navbar-brand .img-profile {
+    max-width: 12rem;
+    max-height: 12rem;
+  }
+  .nav-item {
+    font-weight: 600;
+    font-size: 1.4rem;
   }
 }
 
 @media (min-width: 2500px) {
   section.resume-section {
-    padding-left: 16rem;
+    padding-left: 28rem;
     padding-right: 16rem;
+  }
+  h1, .h1 {
+    font-size: 9rem;
+  }
+
+  h2, .h2 {
+    font-size: 5rem;
+  }
+
+  h3, .h3 {
+    font-size: 4.5rem;
+  }
+
+  h4, .h4 {
+    font-size: 2.5rem;
+  }
+
+  h5, .h5 {
+    font-size: 2rem;
+  }
+
+  h6, .h6 {
+    font-size: 1.5rem;
+  }
+  .lgtext {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+  p.lead {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+  .lead {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+  .subheading {
+    font-weight: 600;
+    font-size: 3rem
+  }
+  .intro {
+    font-weight: 700;
+    font-size: 3.4rem;
+  }
+  #sideNav {
+    width: 30rem;
+  }
+  #sideNav .navbar-brand .img-profile {
+    max-width: 18rem;
+    max-height: 18rem;
+  }
+  .nav-item {
+    font-weight: 700;
+    font-size: 2.2rem;
+  }
+
+  .dev-icons {
+    font-size: 4rem;
+    margin-right: 2rem;
+  }
+  .soft-icons {
+    font-size: 3.5rem;
+    max-width: 3.5rem;
+    max-height: 3.5rem;
+    margin-right: 1rem;
+  }
+  .iconify {
+    font-size: 3.5rem;
+  }
+  .social-icons {
+    font-size: 5rem;
+    margin-right: 1rem;
   }
 }
