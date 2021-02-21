@@ -10089,7 +10089,7 @@ section.resume-section .resume-section-content {
 }
 @media (max-width: 768px) {
   h1, .h1 {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
   h2, .h2 {
@@ -10112,20 +10112,20 @@ section.resume-section .resume-section-content {
     font-size: 1rem;
   }
   .lgtext {
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 0.8rem;
+    font-weight: 200;
   }
   p.lead {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 400;
   }
   .lead {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 400;
   }
   .subheading {
-    font-weight: 600;
-    font-size: 1.5rem;
+    font-weight: 500;
+    font-size: 1.25rem;
   }
   .intro {
     font-weight: 600;
@@ -10144,6 +10144,10 @@ section.resume-section .resume-section-content {
     padding-right: 3rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+  .lgtext {
+    font-size: 1rem;
+    font-weight: 400;
   }
 }
 
