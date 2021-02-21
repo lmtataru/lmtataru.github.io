@@ -10144,7 +10144,7 @@ section.resume-section .resume-section-content {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   section.resume-section {
     min-height: 100vh;
   }
@@ -10189,15 +10189,15 @@ section.resume-section .resume-section-content {
     padding-right: 8rem;
   }
   h1, .h1 {
-    font-size: 7rem;
+    font-size: 5rem;
   }
 
   h2, .h2 {
-    font-size: 4.5rem;
+    font-size: 4rem;
   }
 
   h3, .h3 {
-    font-size: 3.5rem;
+    font-size: 2.7rem;
   }
 
   h4, .h4 {
@@ -10242,12 +10242,23 @@ section.resume-section .resume-section-content {
     font-weight: 600;
     font-size: 1.4rem;
   }
+  .dev-icons {
+    font-size: 3.5rem;
+  }
+  .soft-icons {
+    font-size: 2.5rem;
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+  }
+  .iconify {
+    font-size: 2.5rem;
+  }
 }
 
 @media (min-width: 2500px) {
   section.resume-section {
-    padding-left: 28rem;
-    padding-right: 16rem;
+    padding-left: 20rem;
+    padding-right: 10rem;
   }
   h1, .h1 {
     font-size: 9rem;
@@ -10305,17 +10316,17 @@ section.resume-section .resume-section-content {
   }
 
   .dev-icons {
-    font-size: 4rem;
-    margin-right: 2rem;
+    font-size: 6rem;
+    margin-right: 3rem;
   }
   .soft-icons {
-    font-size: 3.5rem;
-    max-width: 3.5rem;
-    max-height: 3.5rem;
+    font-size: 4rem;
+    max-width: 4rem;
+    max-height: 4rem;
     margin-right: 1rem;
   }
   .iconify {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
   .social-icons {
     font-size: 5rem;
