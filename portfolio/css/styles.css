@@ -392,10 +392,6 @@ h6, .h6 {
   font-size: 1rem;
 }
 
-.lead {
-  font-size: 1.25rem;
-  font-weight: 300;
-}
 
 .display-1 {
   font-size: 6rem;
@@ -10057,6 +10053,10 @@ p.lead {
 .social-icons .social-icon:hover {
   background-color: #bd5d38;
 }
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
 
 .dev-icons {
   font-size: 3rem;
@@ -10112,15 +10112,15 @@ section.resume-section .resume-section-content {
     font-size: 1rem;
   }
   .lgtext {
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 200;
   }
   p.lead {
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 400;
   }
   .lead {
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 400;
   }
   .subheading {
@@ -10130,6 +10130,17 @@ section.resume-section .resume-section-content {
   .intro {
     font-weight: 600;
     font-size: 1.5rem;
+  }
+  .dev-icons {
+    font-size: 2rem;
+  }
+  .soft-icons {
+    font-size: 1.3rem;
+    max-width: 1.3rem;
+    max-height: 1.3rem;
+  }
+  .iconify {
+    font-size: 1.3rem;
   }
 }
 
@@ -10146,12 +10157,33 @@ section.resume-section .resume-section-content {
     padding-bottom: 5rem;
   }
   .lgtext {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 400;
+  }
+  p.lead {
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+  .lead {
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+  .subheading {
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+  .intro {
+    font-weight: 500;
+    font-size: 1.75rem;
+  }
+  .soft-icons {
+    font-size: 1.5rem;
+    max-width: 1.5rem;
+    max-height: 1.5rem;
   }
 }
 
-@media (min-width: 1450px) {
+@media (min-width: 1440px) {
   section.resume-section {
     padding-left: 8rem;
     padding-right: 8rem;
