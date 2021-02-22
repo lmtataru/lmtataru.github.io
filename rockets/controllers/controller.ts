@@ -249,8 +249,8 @@ function breakRocket(id: string){
 
 	if (rocket_list[id_break]) {
 		rocket_list[id_break].break_rocket();
-		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">Rocket " + (id_break+1) + " has slown down!</div></div>";
-		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">Rocket " + (id_break+1) + " has the thursters with this power now: ";
+		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">Rocket " + (id_break+1) + " has slowed down!</div></div>";
+		show_data_temp += "<div class=\"d-flex justify-content-start mb-4\"><div class=\"msg_cotainer\">Rocket " + (id_break+1) + " has the thursters with this powertsc now: ";
 		for (let i: number = 0; i < rocket_list[id_break].nr_of_thrusters; i++) {
 			show_data_temp += rocket_list[id_break].thrusters[i].current_power + ", ";
 		}
