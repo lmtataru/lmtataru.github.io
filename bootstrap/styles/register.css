@@ -1,0 +1,19 @@
+html {
+    height: 100%;
+}
+body {
+    min-height: 100vh;
+}
+.container-fluid, .center {
+    min-height: 100vh;
+}
+.header, .btn-green {
+    background: rgb(13, 52, 63);
+    background: radial-gradient(circle, rgba(13, 52, 63, 1) 6%, rgba(9, 35, 42, 1) 100%) !important;
+}
+.colortext {
+    color: rgb(13, 52, 63);
+}
+.btn-green {
+    color: white;
+}

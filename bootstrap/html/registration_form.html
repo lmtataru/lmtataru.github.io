@@ -6,72 +6,76 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        
+        <link rel="stylesheet" href="../styles/register.css">
         <title>Register</title>
     </head>
     <body>
 
-        <div class="container p-auto m-auto">
-            <h1> Register </h1>
-            <form name="register" action="form.html" id="register_form" onsubmit="return registerForm()" method="POST" autocomplete="off" class="needs-validation" novalidate>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="inputEmail">Email</label>
-                        <input type="text" class="form-control " id="inputEmail" placeholder="Email">
-                        <div id="email_error" class="invalid-feedback"></div>
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="form-group col-md-6">
-                        <label for="inputPassword">Password</label>
-                        <input type="password" class="form-control " id="inputPassword" placeholder="Password">
-                        <div id="password_error" class="invalid-feedback"></div>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="confirmPassword"> Confirm password</label>
-                        <input type="password" class="form-control " id="confirmPassword" placeholder="Confirm Password">
-                        <div id="confirmPass_error" class="invalid-feedback"></div>
-                    </div>
+        <div class="container-fluid header">
+            <div class="row center h-100 justify-content-center align-items-center align-self-center py-5 py-lg-3">
+                <div class="col-12 col-sm-9 col-md-7 col-lg-8 bg-light p-4 rounded">
+                    <form name="register" action="form.html" id="register_form" onsubmit="return registerForm()" method="POST" autocomplete="off" class="needs-validation" novalidate>
+                        <h2 class="colortext text-center mb-4"> Register </h2>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail" class="colortext h6">Email</label>
+                                <input type="text" class="form-control " id="inputEmail" placeholder="Email">
+                                <div id="email_error" class="invalid-feedback"></div>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword" class="colortext h6">Password</label>
+                                <input type="password" class="form-control " id="inputPassword" placeholder="Password">
+                                <div id="password_error" class="invalid-feedback"></div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="confirmPassword" class="colortext h6"> Confirm password</label>
+                                <input type="password" class="form-control " id="confirmPassword" placeholder="Confirm Password">
+                                <div id="confirmPass_error" class="invalid-feedback"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress" class="colortext h6">Address</label>
+                            <input type="text" class="form-control " id="inputAddress" placeholder="1234 Main St, Apartment, studio, or floor">
+                            <div id="address_error" class="invalid-feedback"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="inputCity" class="colortext h6">City</label>
+                                <select id="inputCity" class="form-control ">
+                                    <option></option>
+                                    <option>Barcelona</option>
+                                    <option>Girona</option>
+                                    <option>Tarragona</option>
+                                    <option>Lleida</option>
+                                </select>
+                                <div id="city_error" class="invalid-feedback"></div>
+                            </div>
+                            <div class="form-group col-md-5">
+                                <label for="inputDistrict" class="colortext h6">District</label>
+                                <input type="text" class="form-control" id="inputDistrict">
+                                <div id="district_error" class="invalid-feedback"></div>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="inputZip" class="colortext h6">Zip Code</label>
+                                <input type="text" class="form-control " id="inputZip">
+                                <div id="zip_error" class="invalid-feedback"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input " type="checkbox" id="gridCheck">
+                                <label class="form-check-label colortext h6" for="gridCheck">
+                                I have read and I accept the terms and conditions.
+                                </label>
+                                <div id="grid_error" class="invalid-feedback"></div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-green btn-lg btn-block my-3" >Register</button>
+                        <h6 class="font-weight-light"><a href="login.html"> Already have an account? Log In </a></h6>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control " id="inputAddress" placeholder="1234 Main St, Apartment, studio, or floor">
-                    <div id="address_error" class="invalid-feedback"></div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-5">
-                        <label for="inputCity">City</label>
-                        <select id="inputCity" class="form-control ">
-                            <option></option>
-                            <option>Barcelona</option>
-                            <option>Girona</option>
-                            <option>Tarragona</option>
-                            <option>Lleida</option>
-                        </select>
-                        <div id="city_error" class="invalid-feedback"></div>
-                    </div>
-                    <div class="form-group col-md-5">
-                        <label for="inputDistrict">District</label>
-                        <input type="text" class="form-control" id="inputDistrict">
-                        <div id="district_error" class="invalid-feedback"></div>
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputZip">Zip Code</label>
-                        <input type="text" class="form-control " id="inputZip">
-                        <div id="zip_error" class="invalid-feedback"></div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-check">
-                        <input class="form-check-input " type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                        I have read and I accept the terms and conditions.
-                        </label>
-                        <div id="grid_error" class="invalid-feedback"></div>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Register</button>
-                <h6 class="font-weight-light"><a href="login.html"> Already have an account? Log In </a></h6>
-            </form>
+            </div>
         </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
